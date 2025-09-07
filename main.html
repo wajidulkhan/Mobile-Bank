@@ -54,12 +54,18 @@
       <div
         class="min-h-[200px] grid grid-cols-3 gap-4 bg-white rounded-b-xl p-3"
       >
-        <div class="border-gray-300 border text-center rounded-xl">
+        <div
+          class="border-gray-300 border text-center rounded-xl cursor-pointer"
+          id="add-button"
+        >
           <img src="./assets/purse1.png" alt="" class="mx-auto mt-4" />
           <h2>Add Money</h2>
         </div>
 
-        <div class="border-gray-300 border text-center rounded-xl">
+        <div
+          class="border-gray-300 border text-center rounded-xl cursor-pointer"
+          id="cash-out-button"
+        >
           <img src="./assets/send1.png" alt="" class="mx-auto mt-4" />
           <h2>Cash out</h2>
         </div>
@@ -86,7 +92,7 @@
       </div>
 
       <!-- Add Money  -->
-      <div class="add-money">
+      <div class="add-money" id="add-money" style="display: block">
         <div class="m-4">
           <h1 class="font-semibold text-md p-4">Add Money</h1>
           <form action="" class="bg-white rounded-2xl p-8">
@@ -141,6 +147,53 @@
               id="add-money-btn"
             >
               Add Money
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="cash-out-money" id="cash-out-money" style="display: none">
+        <div class="m-4">
+          <h1 class="font-semibold text-md p-4">Cash Out</h1>
+          <form action="" class="bg-white rounded-2xl p-8">
+            <div class="mb-3">
+              <label class="font-semibold" for="">Add Account Number</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter Your Number"
+                class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+                id="Cash-out-account"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="font-semibold" for="">Cash Out Amount</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter Your Number"
+                class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+                id="cash-out-amount"
+              />
+            </div>
+
+            <div class="mt-5">
+              <label class="font-semibold" for="">4 Digit Pin</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter 4 Digit Pin"
+                class="input mt-3 bg-[#f4f5f7] rounded-3xl w-full"
+                id="pin-number-cash-out"
+              />
+            </div>
+
+            <button
+              class="btn bg-[#0874F2] mt-5 w-full rounded-3xl text-white"
+              id="cash-out-money-btn"
+            >
+              Withdraw
             </button>
           </form>
         </div>
