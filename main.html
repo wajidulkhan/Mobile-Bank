@@ -85,15 +85,18 @@
           <h2>Pay Bill</h2>
         </div>
 
-        <div class="border-gray-300 border text-center rounded-xl">
+        <div
+          class="border-gray-300 border text-center rounded-xl"
+          id="Transaction-btn"
+        >
           <img src="./assets/transaction1.png" alt="" class="mx-auto mt-4" />
           <h2>Transaction</h2>
         </div>
       </div>
 
       <!-- Add Money  -->
-      <div class="add-money" id="add-money" style="display: block">
-        <div class="m-4">
+      <div class="add-money">
+        <div class="m-4 from" id="add-money-from">
           <h1 class="font-semibold text-md p-4">Add Money</h1>
           <form action="" class="bg-white rounded-2xl p-8">
             <div class="mb-3">
@@ -151,8 +154,12 @@
           </form>
         </div>
       </div>
-
-      <div class="cash-out-money" id="cash-out-money" style="display: none">
+      <!-- Cashout  -->
+      <div
+        class="cash-out-money from"
+        id="cash-out-money"
+        style="display: none"
+      >
         <div class="m-4">
           <h1 class="font-semibold text-md p-4">Cash Out</h1>
           <form action="" class="bg-white rounded-2xl p-8">
@@ -196,6 +203,17 @@
               Withdraw
             </button>
           </form>
+        </div>
+      </div>
+
+      <!-- Transaction -->
+      <div
+        class="Transaction-money from"
+        id="Transaction"
+        style="display: none"
+      >
+        <div class="m-4">
+          <h1 class="font-semibold text-md p-4">Transaction</h1>
         </div>
       </div>
     </div>

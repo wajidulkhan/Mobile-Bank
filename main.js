@@ -1,3 +1,5 @@
+getValueTransection = [];
+
 // Add Money With Function
 function getIntValue(id) {
   const idName = document.getElementById(id).value;
@@ -13,6 +15,14 @@ function getStringValue(id) {
 function getInnerValue(id) {
   const valueItem = document.getElementById(id).innerText;
   return valueItem;
+}
+
+function getToggle(values) {
+  const valueClass = document.getElementsByClassName("from");
+  for (froms of valueClass) {
+    froms.style.display = "none";
+  }
+  document.getElementById(values).style.display = "block";
 }
 
 // use Function
@@ -39,7 +49,51 @@ document
     }
     const totalBalance = availableBalance + amountName;
     document.getElementById("Balance").innerText = totalBalance;
-    console.log(bankName, accountName, amountName, pinName, totalBalance);
+  });
+
+// toggle
+
+// Add money
+document.getElementById("add-button").addEventListener("click", function () {
+  getToggle("add-money-from");
+
+  const transactionData = {
+    tranName: "Add Money",
+    Dates: new Date().toLocaleTimeString(),
+  };
+  console.log(transactionData);
+  getValueTransection.push(transactionData);
+  console.log(getValueTransection);
+});
+
+// Cash Out
+document
+  .getElementById("cash-out-button")
+  .addEventListener("click", function () {
+    getToggle("cash-out-money");
+  });
+
+// Transaction
+document
+  .getElementById("Transaction-btn")
+  .addEventListener("click", function () {
+    getToggle("Transaction");
+  });
+// cash-out
+
+document
+  .getElementById("cash-out-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const amount = parseInt(getInnerValue("Balance"));
+    const availableAmount = getIntValue("cash-out-amount");
+    if (amount > 0) {
+      const totalAmount = amount - availableAmount;
+      document.getElementById("Balance").innerText = totalAmount;
+    } else {
+      alert("Account balance in nill");
+    }
   });
 
 // not use funtion
